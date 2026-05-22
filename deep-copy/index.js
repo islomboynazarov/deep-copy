@@ -6,6 +6,10 @@ function copy(value) {
   if (typeof value === 'function') {
     return value;
   }
+
+  if (value instanceof Date) {
+    return new Date(value.getTime());
+  }
 }
 
 module.exports = { copy };
