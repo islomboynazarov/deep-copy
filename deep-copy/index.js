@@ -18,6 +18,22 @@ function copy(value) {
     }
     return arrCopy;
   }
-}
+  
+  var result = Object.create(Object.getPrototypeOf(value));
+  var propertyNames = Object.getOwnPropertyNames(value);
+
+  for (var j = 0; j < propertyNames.length; j += 1) {
+    var key = propertyNames[j];
+    var descriptor = Object.getOwnPropertyDescriptor(value, key);
+
+    if ('value' in descriptor) {
+      descriptor.value = copy(descriptor.value);
+    }
+
+    Object.defineProperty(result, key, descriptor);
+  }
+
+  return result;
+} 
 
 module.exports = { copy };
