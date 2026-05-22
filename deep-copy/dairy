@@ -1,0 +1,18 @@
+Date: May 22, 2026
+Current Focus: Mastering Core JavaScript Fundamentals
+
+I tackled writing a custom copy() function from scratch, and it completely changed 
+how I look at data types in JavaScript.When I first started, I thought copying an 
+object was simple. But I quickly ran into problems.
+
+To survive the complexity, I forced myself to think like a program and break the 
+problem down step by step like I am learning on my online Udemy course.
+1. I started with primitives (numbers, strings) and functions. Since they don't hold nested references, 
+I could just return them as-is.
+
+I realized special objects like Date need their own constructors (new Date()) to clone properly.
+For arrays, I learned how to use recursion—calling my copy() function inside itself to unpack every 
+single layer.Handling complex objects with strict property descriptors and prototypes 
+using Object.create() and Object.defineProperty().
+
+Today, I learned that if I take it apart block by block, I can actually build it myself.
